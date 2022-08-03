@@ -25,7 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.4);
-    height: 150px;
+    height: 200px;
     position: relative;
     top: 40%;
 }
@@ -52,6 +52,7 @@ body {
     flex-direction: column;
     justify-content: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(235, 235, 235);
 }
 
 .title-text, form p, .form-grid, .right-side p {
@@ -60,8 +61,9 @@ body {
 }
 
 .form-border {
-    border: solid 1px black;
-    padding-bottom: 45px;
+    padding: 24px;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .title-text {
@@ -76,14 +78,31 @@ input {
 
 .form-grid {
     display: grid;
-    grid-template-columns: 400px 400px;
+    grid-template-columns: 280px 280px;
     row-gap: 30px;
+    column-gap: 90px;
 
 }
 
-form p {
+.form-border p {
     font-size: 29px;
 }
+
+.form-grid input {
+    height: 28px;
+    border-radius: 5px;
+    border: solid 2px #E5E7EB;
+    padding-left: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.form-grid input:focus {
+    outline: none;
+    border-color: rgb(150, 20, 74);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
 
 #submit-button {
     margin-top: 28px;
@@ -95,13 +114,26 @@ form p {
     background-color: rgb(150, 20, 74);
     color: white;
     font-size: large;
+    cursor: pointer;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
 
+#submit-button:hover {
+    filter: brightness(90%);
+}
 
+#error-msg {
+    font-size: 14px;
+    color: red;
+}
 .log-in {
     font-size: 18px;
+}
+
+.log-in a {
+    text-decoration: none;
+    color: rgb(150, 20, 74);
 }
 
 @media screen and (max-width: 1250px) {
@@ -110,7 +142,7 @@ form p {
     }
 
 
-    .logo .logo-text {
+    .logo .logo-text, .logo .logo-img {
         overflow: hidden;
     }
 }
